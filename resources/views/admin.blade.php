@@ -2,17 +2,23 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark" id="navbar_top">
-        <a class="navbar-brand text-dark" href="/"><h3>BajuStore</h3></a>
+        <a class="navbar-brand text-dark" href="/"><h3>Star Helm</h3></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">              
             </ul>
-            <form class="form-inline my-2 my-lg-0">                                               
-                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href=""><i class="fa fa-info-circle text-success"></i> Anda Login Sebagai Admin BajuStore</a>                
-                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/admin"><i class="fa fa-book text-success"></i> Data Katalog</a>                
-                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/daftarorder"><i class="fa fa-shopping-cart text-success"></i> Daftar Order</a>                
-                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/"><i class="fa fa-sign-out text-success"></i> Keluar</a>        
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href=""><i
+                        class="fa fa-info-circle text-success"></i> Anda Login Sebagai Admin</a>
+                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/admin"><i
+                        class="fa fa-book text-success"></i> Data Barang</a>
+                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/pengeluaran"><i
+                        class="fa fa-sign-out text-success"></i> Pengeluaran</a>
+                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/laporan"><i
+                        class="fa fa-print text-success"></i> Laporan</a>
+                <a class="btn btn-dark text-light my-2 my-sm-0 ml-1 mr-1" href="/"><i
+                        class="fa fa-sign-out text-success"></i> Keluar</a>     
             </form>
         </div>
     </nav>
@@ -22,7 +28,7 @@
 
     <!-- For Demo Purpose-->
     <header class="text-center mb-5 mt-5">       
-        <h1 class="display-4 font-weight-bold">Admin BajuStore</h1>                   
+        <h1 class="display-4 font-weight-bold">Toko Star Helm</h1>                   
     </header>           
 
     @if ($message = Session::get('success'))
@@ -34,7 +40,7 @@
     <!-- Two  Row [Prosucts]-->
     <div class="col-md mb-5" data-aos="fade-down">
         <div class="row">
-            <h2 class="font-weight-bold">Data Katalog</h2>
+            <h2 class="font-weight-bold">Data Barang</h2>
             <form action="/admin/cari" method="get" class="ml-5 col-md-6 mx-auto">                  
                 <div class="input-group">           
                         <input type="search" class="form-control rounded" name="q" value="{{old('q')}}" placeholder="Cari Barang..." aria-label="Search"
@@ -42,8 +48,8 @@
                         <button type="submit" class="btn btn-outline-success"><i class="fa fa-search"></i> Cari</button>
                 </div>                                       
             </form>
-            <a class="btn btn-dark text-light ml-auto" data-toggle="modal" data-target="#tambah_katalog"><i class="fa fa-plus text-light"></i> Tambah Produk</a>
-            
+            <a><button class="btn btn-secondary text-light ml-auto mr-2" data-toggle="modal" data-target="#tambah_induk"><i class="fa fa-plus text-light"></i> Tambah Induk Produk</button>   </a>
+            <a><button class="btn btn-dark text-light ml-auto" data-toggle="modal" data-target="#tambah_katalog"><i class="fa fa-plus text-light"></i> Tambah Produk</button>        </a>
         </div>        
     </div>
     

@@ -33,6 +33,9 @@ Route::get('/login', function () {
 
 
 Route::get('/admin', 'c_katalog@get_katalog')->name('get_katalog');
+Route::get('/pengeluaran', 'c_katalog@get_pengeluaran')->name('get_pengeluaran');
+Route::get('/laporan', 'c_katalog@get_laporan')->name('get_laporan');
+Route::get('/pdf', 'c_katalog@get_pdf')->name('get_pdf');
 Route::get('/admin/cari', 'c_katalog@cari_katalog')->name('cari_katalog');
 
 Route::get('/daftarorder', 'c_order@get_order')->name('get_order');

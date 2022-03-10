@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use PDF;
 
 class C_katalog extends Controller
 {
@@ -13,6 +14,30 @@ class C_katalog extends Controller
         $wa = DB::table('data_wa')->get();                              
         
         return view('admin', ['katalog' => $katalog, 'wa' => $wa]);        
+    }
+
+    public function get_pengeluaran()
+    {        
+        $katalog = DB::table('katalog')->paginate(8); 
+        $wa = DB::table('data_wa')->get();                              
+        
+        return view('pengeluaran', ['katalog' => $katalog, 'wa' => $wa]);        
+    }
+
+    public function get_laporan()
+    {        
+        $katalog = DB::table('katalog')->paginate(8); 
+        $wa = DB::table('data_wa')->get();                              
+        
+        return view('laporan', ['katalog' => $katalog, 'wa' => $wa]);        
+    }
+
+    public function get_pdf() {
+    
+        $pdf = PDF::loadView('cetak_laporan');
+        // download PDF file with download method
+        return $pdf->stream("dompdf_out.pdf", array("Attachment" => false));
+        // return $pdf->download('pdf_file.pdf');
     }
 
     public function cari_katalog(Request $request) {
